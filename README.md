@@ -17,111 +17,155 @@ The organization of papers refers to our survey [Attacks, Defenses and Evaluatio
 
 If you find out a mistake or any related materials could be helpful, feel free to contact us or make a PR.
 
-## Contents
+## :pushpin:Table of Contents
 
-- [Overview](#overview)
-- [Paper List](#paper-list)
-  - [Attacks](#attacks)
-    - [Inference-time Attacks](#inference-time-attacks)
-      - [Red-team Attacks](#red-team-attacks)
-      - [Template-based Attacks](#template-based-attacks)
-        - [Heuristic-based Templates](#heuristic-based-templates)
-        - [Optimization-based Templates](#optimization-based-templates)
+- :sparkles: [Overview](#overview)
+- :bookmark_tabs: [Paper List](#paper-list)
+  - :bomb: [Attacks](#attacks)
+    - :dart: [Inference-time Attacks](#inference-time-attacks)
+      - :scroll: [Red-team Attacks](#red-team-attacks)
+      - :clapper: [Template-based Attacks](#template-based-attacks)
+        - :one: [Heuristic-based Templates](#heuristic-based-templates)
+        - :two: [Optimization-based Templates](#optimization-based-templates)
 
-      - [Neural Prompt-to-Prompt Attacks](#neural-prompt-to-prompt-attacks)
+      - :crystal_ball: [Neural Prompt-to-Prompt Attacks](#neural-prompt-to-prompt-attacks)
 
-    - [Training-time Attacks](#training-time-attacks)
+    - :bullettrain_front: [Training-time Attacks](#training-time-attacks)
 
-  - [Defenses](#defenses)
-    - [LLM Safety Alignment](#LLM-safety-alignment)
-    - [Inference Guidance](#inference-guidance)
-    - [Input/Output Filters](#input/output-filters)
-      - [Rule-based Filters](#rule-based-filters)
-      - [Model-based Filters](#model-based-filters)
+  - :lock: [Defenses](#defenses)
+    - :muscle: [LLM Safety Alignment](#LLM-safety-alignment)
+    - :mask: [Inference Guidance](#inference-guidance)
+    - :umbrella: [Input/Output Filters](#input/output-filters)
+      - :art: [Rule-based Filters](#rule-based-filters)
+      - :camera: [Model-based Filters](#model-based-filters)
 
-  - [Evaluations](#evaluations)
-    - [Datasets](#datasets)
-    - [Metrics](#metrics)
+  - :pencil2: [Evaluations](#evaluations)
+    - :book: [Datasets](#datasets)
+    - :mag: [Metrics](#metrics)
 
 
-# Overview
+# :sparkles:Overview
 
 (Working on progress...)
 
 
 
-# Paper List
+# :bookmark_tabs:Paper List
 
-### Attacks
+### :bomb:Attacks
 
-#### Inference-time Attacks
+#### :dart: Inference-time Attacks
 
-##### Red-team Attacks
+##### :scroll: Red-team Attacks
 
 
 
-##### Template-based Attacks
+##### :clapper: Template-based Attacks
 
-###### Heuristic-based Templates
+###### :one: Heuristic-based Templates
 
-1. [Ignore Previous Prompt: Attack Techniques For Language Models](https://arxiv.org/abs/2211.09527)
+- [Ignore Previous Prompt: Attack Techniques For Language Models](https://arxiv.org/abs/2211.09527)
 
   - Fábio Perez, Ian Ribeiro
-  - Code：[https://github.com/agencyenterprise/PromptInject](https://github.com/agencyenterprise/PromptInject)
+
+  - Repo: [https://github.com/agencyenterprise/PromptInject](https://github.com/agencyenterprise/PromptInject)
+
   - Summary：
-    - Prompt-based attack via templates.
-    - Design two types of templates: goal hijacking that leads the original goal to another malicious goal, and prompt leaking that induces the LLM to output its system prompt.
+    - Design two types of attack templates: goal hijacking that leads the original goal to another malicious goal, and prompt leaking that induces the LLM to output its system prompt.
 
-2. [GPT-4 Is Too Smart To Be Safe: Stealthy Chat with LLMs via Cipher](https://arxiv.org/abs/2308.06463)
+- ["Do Anything Now": Characterizing and Evaluating In-The-Wild Jailbreak Prompts on Large Language Models](https://arxiv.org/abs/2308.03825)
 
-   - Youliang Yuan, Wenxiang Jiao, Wenxuan Wang, Jen-tse Huang, Pinjia He, Shuming Shi, Zhaopeng Tu
+  - Xinyue Shen, Zeyuan Chen, Michael Backes, Yun Shen, Yang Zhang
+  - Repo: https://github.com/verazuo/jailbreak_llms
+  - Summary:
+    - Collect 6,387 manually designed attack templates (jailbreak prompts) from online platforms.
+    - Evaluate the charisteristics and effectiveness of the collected jailbreak prompts.
 
-   - Summary:
-     - Prompt-based attack via templates.
-     - Implement cipher attacks by designed templates.
+- [Ignore This Title and HackAPrompt: Exposing Systemic Vulnerabilities of LLMs through a Global Scale Prompt Hacking Competition](https://arxiv.org/abs/2311.16119)
 
-3. [Red-Teaming Large Language Models using Chain of Utterances for Safety-Alignment](https://arxiv.org/abs/2308.09662)
+  - Sander Schulhoff, Jeremy Pinto, Anaum Khan, Louis-François Bouchard, Chenglei Si, Svetlina Anati, Valen Tagliabue, Anson Liu Kost, Christopher Carnahan, Jordan Boyd-Graber
+  - Summary:
+    - Summarize the various attack templates (jailbreak prompts) received for a prompt hacking competitio
 
-   - Rishabh Bhardwaj, Soujanya Poria
+- [The Radicalization Risks of GPT-3 and Advanced Neural Language Models](https://arxiv.org/abs/2009.06807)
 
-   - Summary:
-     - Prompt-based attack via templates.
-     - Attack LLM by asking to play the role of both a Base-LM and a Red-LM, while the latter is demanded to induce useful information for the former.
+  - Kris McGuffie, Alex Newhouse
+  - Summary:
+    - Use few-shot examples to elicit undesirable responses from GPT-3.
+    - Compare and analyze the radicalization of GPT-3 under zero-shot and few-shot circumstances.
 
-4. [DeepInception: Hypnotize Large Language Model to Be Jailbreaker](https://arxiv.org/abs/2311.03191)
+- [Jailbreak and Guard Aligned Language Models with Only Few In-Context Demonstrations](https://arxiv.org/abs/2310.06387)
+  -  Zeming Wei, Yifei Wang, Yisen Wang
 
-   - Xuan Li, Zhanke Zhou, Jianing Zhu, Jiangchao Yao, Tongliang Liu, Bo Han
+  -  Summary:
+     -  Use few-shot examples to elicit undesirable responses.
+     -  Enhance attacking performance by appending succesful attack cases to the prompt.
 
-   - Code: https://github.com/tmlr-group/DeepInception
+- [GPT-4 Is Too Smart To Be Safe: Stealthy Chat with LLMs via Cipher](https://arxiv.org/abs/2308.06463)
+  - Youliang Yuan, Wenxiang Jiao, Wenxuan Wang, Jen-tse Huang, Pinjia He, Shuming Shi, Zhaopeng Tu
 
-   - Summary:
-     - Prompt-based attack via templates based on psychological prior.
-       - Based on the prior from a psychological experiment (Milgram shock experiment) that LLM can be misguided by indirect instructions, the work designs an input template to create pseudo multi-layer story-telling tasks for model attacking.
+  - Summary:
+    - Designs cipher attack templates that convert LLM inputs into specific domains (such as ASCII) to evade security mechanisms, and then reverts LLM outputs back to natural language.
 
-5. [Jailbreak and Guard Aligned Language Models with Only Few In-Context Demonstrations](https://arxiv.org/abs/2310.06387)
+- [Exploiting Programmatic Behavior of LLMs: Dual-Use Through Standard Security Attacks](https://arxiv.org/abs/2302.05733)
 
-   -  Zeming Wei, Yifei Wang, Yisen Wang
+  - Daniel Kang, Xuechen Li, Ion Stoica, Carlos Guestrin, Matei Zaharia, Tatsunori Hashimoto
 
-   -  Summary:
-      -  Few-shot prompt-based attack.
-         -  Enhance attacking performance by appending succesful attack cases to the prompt.
+  - Summary:
+    - The template design incorporates payload splitting, dividing the input into substatements. While instructing LLM not to scrutinize, the prompt directs it to combine substatements during processing, reducing their direct correlation to evade defense mechanisms.
 
-6. [A Wolf in Sheep's Clothing: Generalized Nested Jailbreak Prompts can Fool Large Language Models Easily](https://arxiv.org/abs/2311.08268)
+- [Latent Jailbreak: A Benchmark for Evaluating Text Safety and Output Robustness of Large Language Models](https://arxiv.org/abs/2307.08487)
 
-   - Peng Ding, Jun Kuang, Dan Ma, Xuezhi Cao, Yunsen Xian, Jiajun Chen, Shujian Huang
+  - Huachuan Qiu, Shuai Zhang, Anqi Li, Hongliang He, Zhenzhong Lan
+  - Repo: https://github.com/qiuhuachuan/latent-jailbreak
+  - Summary:
+    - Translate the original question into a language domain where LLM's security capabilities are weak, to evade LLM's security scrutiny.
+
+    - Construct a dataset for a latent jailbreak.
+
+- [DeepInception: Hypnotize Large Language Model to Be Jailbreaker](https://arxiv.org/abs/2311.03191)
+
+  - Xuan Li, Zhanke Zhou, Jianing Zhu, Jiangchao Yao, Tongliang Liu, Bo Han
+
+  - Code: https://github.com/tmlr-group/DeepInception
+
+  - Summary:
+    - Design a template to transform queries into indirect multi-layer storytelling tasks for attacking purposes.
+
+- [Red-Teaming Large Language Models using Chain of Utterances for Safety-Alignment](https://arxiv.org/abs/2308.09662)
+
+  - Rishabh Bhardwaj, Soujanya Poria
+
+  - Summary:
+    - Designed a template that requires LLM to simulate a dialogue between two LLMs, playing the roles of both a Base-LM and a Red-LM simultaneously. The Red-LM is tasked with eliciting useful information for the Base-LM.
+    - Introduced the Red-Instruct method and its dataset, minimizing the probability of harmful responses during the fine-tuning process to enhance security.
+
+- [A Wolf in Sheep's Clothing: Generalized Nested Jailbreak Prompts can Fool Large Language Models Easily](https://arxiv.org/abs/2311.08268)
+
+  - Peng Ding, Jun Kuang, Dan Ma, Xuezhi Cao, Yunsen Xian, Jiajun Chen, Shujian Huang
+  - Summary:
+
+    -  Use LLM to rewrite harmful prompts and nest them in specific scenarios.
+    -  Prompt LLMs to perform word-level or sentense level rewriting on initial harmful prompts, including paraphrasing, misspelling, word inserting, etc. Repeat rewriting until the obtained prompt elucidate the harmful filter based on the same LLMs. The obtained prompts are further nested in three scenarios via prompt-based LLMs: code completion, table filling, and text continuation.
+- [Multi-step Jailbreaking Privacy Attacks on ChatGPT](https://arxiv.org/abs/2304.05197)
+  - Haoran Li, Dadi Guo, Wei Fan, Mingshi Xu, Jie Huang, Fanpu Meng, Yangqiu Song
+  - repo: https://github.com/HKUST-KnowComp/LLM-Multistep-Jailbreak
+  - Summary:
+    - The attack template employs a three-utterance context. The user initiates the conversation by issuing a jailbreak command, to which the LLM agrees. Subsequently, the user poses a specific question.
+- [Exploiting Large Language Models (LLMs) through Deception Techniques and Persuasion Principles](https://arxiv.org/abs/2311.14876)
+  - Sonali Singh, Faranak Abri, Akbar Siami Namin
+  - Summary:
+    - Design attack strategies based on techniques in deception theory.
+- [Analyzing the Inherent Response Tendency of LLMs: Real-World Instructions-Driven Jailbreak](https://arxiv.org/abs/2312.04127)
+  - Yanrui Du, Sendong Zhao, Ming Ma, Yuhan Chen, Bing Qin
+  - Summary:
+    - Design attack templates with real-world instructions based on analysis of LLM affirmation tendency.
 
 
-   - Summary:
 
-     -  Use LLM to rewrite harmful prompts and nest them in specific scenarios.
-        -  Prompt LLMs to perform word-level or sentense level rewriting on initial harmful prompts, including paraphrasing, misspelling, word inserting, etc. Repeat rewriting until the obtained prompt elucidate the harmful filter based on the same LLMs. The obtained prompts are further nested in three scenarios via prompt-based LLMs: code completion, table filling, and text continuation.
-
-     
-
-###### Optimization-based Templates
+###### :two: Optimization-based Templates
 
 1. [Universal and Transferable Adversarial Attacks on Aligned Language Models](https://arxiv.org/pdf/2307.15043.pdf)
-
    - Andy Zou, Zifan Wang, J. Zico Kolter, Matt Fredrikson
 
    - Code: [https://github.com/llm-attacks/llm-attacks](https://github.com/llm-attacks/llm-attacks)
@@ -169,11 +213,11 @@ If you find out a mistake or any related materials could be helpful, feel free t
 
        
 
-##### Neural Prompt-to-Prompt Attacks
+##### :crystal_ball: Neural Prompt-to-Prompt Attacks
 
 
 
-#### Training-time Attacks
+#### :bullettrain_front: Training-time Attacks
 
 - [Shadow Alignment: The Ease of Subverting Safely-Aligned Language Models](https://arxiv.org/abs/2310.02949#:~:text=Formally%2C we term a new attack as Shadow,their capability to respond appropriately to regular inquiries.)
   - Xianjun Yang, Xiao Wang, Qi Zhang, Linda Petzold, William Yang Wang, Xun Zhao, Dahua Lin
@@ -191,9 +235,9 @@ If you find out a mistake or any related materials could be helpful, feel free t
 
 
 
-### Defenses
+### :lock:Defenses
 
-#### LLM Safety Alignment
+#### :muscle: LLM Safety Alignment
 
 - [MART: Improving LLM Safety with Multi-round Automatic Red-Teaming](https://arxiv.org/pdf/2311.07689.pdf)
 
@@ -216,7 +260,7 @@ If you find out a mistake or any related materials could be helpful, feel free t
 
     
 
-#### Inference Guidance
+#### :mask: Inference Guidance
 
 - [RAIN: Your Language Models Can Align Themselves without Finetuning](https://arxiv.org/abs/2309.07124)
   - Yuhui Li, Fangyun Wei, Jinjing Zhao, Chao Zhang, Hongyang Zhang
@@ -241,9 +285,9 @@ If you find out a mistake or any related materials could be helpful, feel free t
 
 
 
-#### Input/Output Filters
+#### :umbrella: Input/Output Filters
 
-##### Rule-based Filters
+##### :art: Rule-based Filters
 
 - [Certifying LLM Safety against Adversarial Prompting](https://arxiv.org/abs/2309.02705)
   - Aounon Kumar, Chirag Agarwal, Suraj Srinivas, Soheil Feizi, Hima Lakkaraju
@@ -257,7 +301,7 @@ If you find out a mistake or any related materials could be helpful, feel free t
     - Input filter.
     - Use approaches such as PPL (Perplexity filter) to detect and defense prompt injection attacks.
 
-##### Model-based Filters
+##### :camera: Model-based Filters
 
 - [A Holistic Approach to Undesired Content Detection in the Real World](https://arxiv.org/pdf/2208.03274.pdf)
   - Todor Markov, Chong Zhang, Sandhini Agarwal, Tyna Eloundou, Teddy Lee, Steven Adler, Angela Jiang, Lilian Weng
@@ -272,12 +316,12 @@ If you find out a mistake or any related materials could be helpful, feel free t
 
 
 
-### Evaluations
+### :pencil2:Evaluations
 
-#### Datasets
+#### :book: Datasets
 
 (working on progress...)
 
-#### Metrics
+#### :mag: Metrics
 
 (working on progress...)

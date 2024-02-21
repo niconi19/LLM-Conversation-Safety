@@ -19,53 +19,48 @@ If you find out a mistake or any related materials could be helpful, feel free t
 
 ## :pushpin:Table of Contents
 
-- :sparkles: [Overview](#overview)
-- :bookmark_tabs: [Paper List](#paper-list)
-  - :bomb: [Attacks](#attacks)
-    - :dart: [Inference-time Attacks](#inference-time-attacks)
-      - :scroll: [Red-team Attacks](#red-team-attacks)
-      - :clapper: [Template-based Attacks](#template-based-attacks)
-        - :one: [Heuristic-based Templates](#heuristic-based-templates)
-        - :two: [Optimization-based Templates](#optimization-based-templates)
-
-      - :crystal_ball: [Neural Prompt-to-Prompt Attacks](#neural-prompt-to-prompt-attacks)
-
-    - :bullettrain_front: [Training-time Attacks](#training-time-attacks)
-
-  - :lock: [Defenses](#defenses)
-    - :muscle: [LLM Safety Alignment](#LLM-safety-alignment)
-    - :mask: [Inference Guidance](#inference-guidance)
-    - :umbrella: [Input/Output Filters](#input/output-filters)
-      - :art: [Rule-based Filters](#rule-based-filters)
-      - :camera: [Model-based Filters](#model-based-filters)
-
-  - :pencil2: [Evaluations](#evaluations)
-    - :book: [Datasets](#datasets)
-    - :mag: [Metrics](#metrics)
+- [:sparkles: Overview](#overview)
+- [:bookmark_tabs: Paper List](#paper-list)
+  - [:bomb: Attacks](#attacks)
+    - [:dart: Inference-time Attacks](#inference-time-attacks)
+      - [:scroll: Red-team Attacks](#red-team-attacks)
+      - [:clapper: Template-based Attacks](#template-based-attacks)
+        - [🔹 Heuristics](#heuristic-based-templates)
+        - [🔹 Optimization](#optimization-based-templates)
+      - [:crystal_ball: Neural Prompt-to-Prompt Attacks](#neural-prompt-to-prompt-attacks)
+    - [:bullettrain_front: Training-time Attacks](#front-training-time-attacks)
+  - [:lock: Defenses](#defenses)
+    - [:muscle: LLM Safety Alignment](#llm-safety-alignment)
+    - [:mask: Inference Guidance](#inference-guidance)
+    - [:umbrella: Input/Output Filters](#input/output-filters)
+      - [:art: Rule-based Filters](#rule-based-filters)
+      - [:camera: Model-based Filters](#model-based-filters)
+  - [:pencil2: Evaluations](#evaluations)
+    - [:book: Datasets](#datasets)
+    - [:mag: Metrics](#metrics)
 
 
-# :sparkles:Overview
+# ✨Overview
 
 (Working on progress...)
 
 
 
-# :bookmark_tabs:Paper List
+# 📑Paper List
 
-### :bomb:Attacks
+### 💣Attacks
 
-#### :dart: Inference-time Attacks
+#### 🎯Inference-time Attacks
 
-##### :scroll: Red-team Attacks
+##### 📜Red-team Attacks
 
 
 
-##### :clapper: Template-based Attacks
+##### 🎬Template-based Attacks
 
-###### :one: Heuristic-based Templates
+###### 🔹Heuristic-based Templates
 
 - [Ignore Previous Prompt: Attack Techniques For Language Models](https://arxiv.org/abs/2211.09527)
-
   - Fábio Perez, Ian Ribeiro
 
   - Repo: [https://github.com/agencyenterprise/PromptInject](https://github.com/agencyenterprise/PromptInject)
@@ -163,44 +158,44 @@ If you find out a mistake or any related materials could be helpful, feel free t
 
 
 
-###### :two: Optimization-based Templates
+###### 🔹Optimization-based Templates
 
-1. [Universal and Transferable Adversarial Attacks on Aligned Language Models](https://arxiv.org/pdf/2307.15043.pdf)
-   - Andy Zou, Zifan Wang, J. Zico Kolter, Matt Fredrikson
+- [Universal and Transferable Adversarial Attacks on Aligned Language Models](https://arxiv.org/pdf/2307.15043.pdf)
+  - Andy Zou, Zifan Wang, J. Zico Kolter, Matt Fredrikson
 
-   - Code: [https://github.com/llm-attacks/llm-attacks](https://github.com/llm-attacks/llm-attacks)
+  - Code: [https://github.com/llm-attacks/llm-attacks](https://github.com/llm-attacks/llm-attacks)
 
-   - Summary:
-     - Prefix prompt injection attack.
-     - Automatically generate adversarial prompts by gradient-based techniques.
+  - Summary:
+    - Prefix prompt injection attack.
+    - Automatically generate adversarial prompts by gradient-based techniques.
 
-2. [ AutoDAN: Automatic and Interpretable Adversarial Attacks on Large Language Models](https://arxiv.org/abs/2310.15140)
+- [ AutoDAN: Automatic and Interpretable Adversarial Attacks on Large Language Models](https://arxiv.org/abs/2310.15140)
 
-   - Sicheng Zhu, Ruiyi Zhang, Bang An, Gang Wu, Joe Barrow, Zichao Wang, Furong Huang, Ani Nenkova, Tong Sun
+  - Sicheng Zhu, Ruiyi Zhang, Bang An, Gang Wu, Joe Barrow, Zichao Wang, Furong Huang, Ani Nenkova, Tong Sun
 
-   - Summary:
-     - Prefix prompt injection attack.
-     - Automatically generate adversarial prompts by gradient-based techniques. Generate new tokens at the end of the sentence instead of replacing old ones while considering fluency constrains.
+  - Summary:
+    - Prefix prompt injection attack.
+    - Automatically generate adversarial prompts by gradient-based techniques. Generate new tokens at the end of the sentence instead of replacing old ones while considering fluency constrains.
 
-3. [Jailbreaking Black Box Large Language Models in Twenty Queries](https://aicarrier.feishu.cn/wiki/KK0gwZRIMiHuzKkrh17cCD4AnHf) 
+- [Jailbreaking Black Box Large Language Models in Twenty Queries](https://aicarrier.feishu.cn/wiki/KK0gwZRIMiHuzKkrh17cCD4AnHf) 
 
-   - Patrick Chao, Alexander Robey, Edgar Dobriban, Hamed Hassani, George J. Pappas, Eric Wong
+  - Patrick Chao, Alexander Robey, Edgar Dobriban, Hamed Hassani, George J. Pappas, Eric Wong
 
-   - Summary:
-     - Prompt-based attack.
-     - Automatically generate adversarial prompts by leveraging LLM as an optimizer.
+  - Summary:
+    - Prompt-based attack.
+    - Automatically generate adversarial prompts by leveraging LLM as an optimizer.
 
-4. [AutoDAN: Generating Stealthy Jailbreak Prompts on Aligned Large Language Models](https://arxiv.org/abs/2310.04451)
+- [AutoDAN: Generating Stealthy Jailbreak Prompts on Aligned Large Language Models](https://arxiv.org/abs/2310.04451)
 
-   - Xiaogeng Liu, Nan Xu, Muhao Chen, Chaowei Xiao
+  - Xiaogeng Liu, Nan Xu, Muhao Chen, Chaowei Xiao
 
-   - Summary:
-     - Prompt-based attack.
-     - Automatically generate adversarial prompts by leveraging LLM-based GA optimization approach.
+  - Summary:
+    - Prompt-based attack.
+    - Automatically generate adversarial prompts by leveraging LLM-based GA optimization approach.
 
-5. [Evil Geniuses: Delving into the Safety of LLM-based Agents](https://arxiv.org/pdf/2311.11855v1.pdf)
+- [Evil Geniuses: Delving into the Safety of LLM-based Agents](https://arxiv.org/pdf/2311.11855v1.pdf)
 
-   - Yu Tian, Xiao Yang, Jingyuan Zhang, Yinpeng Dong, Hang Su
+  - Yu Tian, Xiao Yang, Jingyuan Zhang, Yinpeng Dong, Hang Su
 
 
    - Repo: https://github.com/T1aNS1R/Evil-Geniuses
@@ -213,13 +208,13 @@ If you find out a mistake or any related materials could be helpful, feel free t
 
        
 
-##### :crystal_ball: Neural Prompt-to-Prompt Attacks
+##### 🔮Neural Prompt-to-Prompt Attacks
 
 
 
-#### :bullettrain_front: Training-time Attacks
+#### 🚅Training-time Attacks
 
-- [Shadow Alignment: The Ease of Subverting Safely-Aligned Language Models](https://arxiv.org/abs/2310.02949#:~:text=Formally%2C we term a new attack as Shadow,their capability to respond appropriately to regular inquiries.)
+- [Shadow Alignment: The Ease of Subverting Safely-Aligned Language Models](https://arxiv.org/abs/2310.02949)
   - Xianjun Yang, Xiao Wang, Qi Zhang, Linda Petzold, William Yang Wang, Xun Zhao, Dahua Lin
   - Summary:
     - Adjust LLM parameters with a tiny amount of automatically generated data to elicit harmful behaviours.
@@ -235,9 +230,9 @@ If you find out a mistake or any related materials could be helpful, feel free t
 
 
 
-### :lock:Defenses
+### 🔒Defenses
 
-#### :muscle: LLM Safety Alignment
+#### 💪LLM Safety Alignment
 
 - [MART: Improving LLM Safety with Multi-round Automatic Red-Teaming](https://arxiv.org/pdf/2311.07689.pdf)
 
@@ -260,7 +255,7 @@ If you find out a mistake or any related materials could be helpful, feel free t
 
     
 
-#### :mask: Inference Guidance
+#### 😷Inference Guidance
 
 - [RAIN: Your Language Models Can Align Themselves without Finetuning](https://arxiv.org/abs/2309.07124)
   - Yuhui Li, Fangyun Wei, Jinjing Zhao, Chao Zhang, Hongyang Zhang
@@ -285,9 +280,9 @@ If you find out a mistake or any related materials could be helpful, feel free t
 
 
 
-#### :umbrella: Input/Output Filters
+#### ☔Input/Output Filters
 
-##### :art: Rule-based Filters
+##### 🎨Rule-based Filters
 
 - [Certifying LLM Safety against Adversarial Prompting](https://arxiv.org/abs/2309.02705)
   - Aounon Kumar, Chirag Agarwal, Suraj Srinivas, Soheil Feizi, Hima Lakkaraju
@@ -301,7 +296,7 @@ If you find out a mistake or any related materials could be helpful, feel free t
     - Input filter.
     - Use approaches such as PPL (Perplexity filter) to detect and defense prompt injection attacks.
 
-##### :camera: Model-based Filters
+##### 📷Model-based Filters
 
 - [A Holistic Approach to Undesired Content Detection in the Real World](https://arxiv.org/pdf/2208.03274.pdf)
   - Todor Markov, Chong Zhang, Sandhini Agarwal, Tyna Eloundou, Teddy Lee, Steven Adler, Angela Jiang, Lilian Weng
@@ -316,12 +311,12 @@ If you find out a mistake or any related materials could be helpful, feel free t
 
 
 
-### :pencil2:Evaluations
+### ✏️Evaluations
 
-#### :book: Datasets
+#### 📖Datasets
 
 (working on progress...)
 
-#### :mag: Metrics
+#### 🔍Metrics
 
 (working on progress...)

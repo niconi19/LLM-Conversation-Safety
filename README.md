@@ -1,6 +1,6 @@
 <h1 align="center">LLM Conversation Safety</h1>
 
-This is a collection of research papers of about **LLM Conversation Safety**. (Working on progress...)
+This is a collection of research papers of **LLM Conversation Safety**. (💦Working on progress...)
 
 The organization of papers refers to our survey [Attacks, Defenses and Evaluations for LLM Conversation Safety: A Survey](https://arxiv.org/abs/2402.09283). If you find our survey useful for your research, please cite the following paper:
 
@@ -15,7 +15,7 @@ The organization of papers refers to our survey [Attacks, Defenses and Evaluatio
 }
 ```
 
-If you find out a mistake or any related materials could be helpful, feel free to contact us or make a PR.
+If you find out a mistake or any related materials could be helpful, feel free to contact us or make a PR🌟.
 
 ## :pushpin:Table of Contents
 
@@ -43,6 +43,8 @@ If you find out a mistake or any related materials could be helpful, feel free t
 # ✨Overview
 
 (Working on progress...)
+
+<img src="D:\file\repo\LLM_safety\assets\explanation.png" style="zoom: 67%;" />
 
 
 
@@ -156,9 +158,26 @@ If you find out a mistake or any related materials could be helpful, feel free t
   - Summary:
     - Design attack templates with real-world instructions based on analysis of LLM affirmation tendency.
 
-
+---
 
 ###### 🔹Optimization-based Templates
+
+- [Gradient-based Adversarial Attacks against Text Transformers](https://arxiv.org/abs/2104.13733)
+  - Chuan Guo, Alexandre Sablayrolles, Hervé Jégou, Douwe Kiela
+  - Summary:
+    - Apply Gumbel-softmax to attack a white-box LM-based classifier.
+- [HotFlip: White-Box Adversarial Examples for Text Classification](https://arxiv.org/abs/1712.06751)
+  - Javid Ebrahimi, Anyi Rao, Daniel Lowd, Dejing Dou
+  - Summary:
+    - Iteratively rank tokens based on the first-order approximation of the adversarial objective and compute the adversarial objective with the highest-ranked tokens as a way to approximate coordinate ascends.
+- [AutoPrompt: Eliciting Knowledge from Language Models with Automatically Generated Prompts](https://arxiv.org/abs/2010.15980)
+  - Taylor Shin, Yasaman Razeghi, Robert L. Logan IV, Eric Wallace, Sameer Singh
+  - Summary:
+    - Optimize universal adversarial triggers to perturb the language model output.
+- [Universal Adversarial Triggers for Attacking and Analyzing NLP](https://arxiv.org/abs/1908.07125)
+  - Eric Wallace, Shi Feng, Nikhil Kandpal, Matt Gardner, Sameer Singh
+  - Summary:
+    - 
 
 - [Universal and Transferable Adversarial Attacks on Aligned Language Models](https://arxiv.org/pdf/2307.15043.pdf)
   - Andy Zou, Zifan Wang, J. Zico Kolter, Matt Fredrikson
@@ -194,7 +213,6 @@ If you find out a mistake or any related materials could be helpful, feel free t
     - Automatically generate adversarial prompts by leveraging LLM-based GA optimization approach.
 
 - [Evil Geniuses: Delving into the Safety of LLM-based Agents](https://arxiv.org/pdf/2311.11855v1.pdf)
-
   - Yu Tian, Xiao Yang, Jingyuan Zhang, Yinpeng Dong, Hang Su
 
 
@@ -203,14 +221,15 @@ If you find out a mistake or any related materials could be helpful, feel free t
    - Summary:
 
      - Multiple-agent system attack with agent roles specified by system prompt, which generates harmful roleplay prompts to attack both LLM and LLM-based agents.
-
      - Use system prompt to construct a virtual evil plan development team via LLM, which consists of a harmful prompt writer, a suitability reviewer, and a toxicity tester, composing a closed loop for prompt optimization. Specifically, the writer modifies the initial prompt to be harmful. Then, the reviewer and the tester checks the compatibility and effectiveness of the written harmful prompt, and the prompts deemed incompatible or inoffensive will be sent back to the writer to be further revised. The revision repeats until the attack is sucessful or other predefined termination conditions are met.
 
-       
+---
 
 ##### 🔮Neural Prompt-to-Prompt Attacks
 
 
+
+---
 
 #### 🚅Training-time Attacks
 

@@ -44,7 +44,7 @@ If you find out a mistake or any related materials could be helpful, feel free t
 
 (Working on progress...)
 
-<img src="D:\file\repo\LLM_safety\assets\explanation.png" style="zoom: 67%;" />
+<img src="D:\file\repo\LLM_safety\assets\explanation.png" style="zoom:80%;" />
 
 
 

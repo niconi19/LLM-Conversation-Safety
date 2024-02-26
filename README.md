@@ -44,7 +44,7 @@ If you find out a mistake or any related materials could be helpful, feel free t
 
 (Working on progress...)
 
-<img src="C:\workspace\github projects\LLM_conversation_safety_private\assets\explanation.png" style="zoom:80%;" />
+<img src="assets\explanation.png" style="zoom:80%;" />
 
 
 

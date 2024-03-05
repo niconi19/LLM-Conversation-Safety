@@ -181,6 +181,8 @@ If you find out a mistake or any related materials could be helpful, feel free t
 
   - Rishabh Bhardwaj, Soujanya Poria
 
+  - Repo: [declare-lab/red-instruct (github.com)](https://github.com/declare-lab/red-instruct)
+
   - Summary:
     - Designed a template that requires LLM to simulate a dialogue between two LLMs, playing the roles of both a Base-LM and a Red-LM simultaneously. The Red-LM is tasked with eliciting useful information for the Base-LM.
     - Introduced the Red-Instruct method and its dataset, minimizing the probability of harmful responses during the fine-tuning process to enhance security.
@@ -275,6 +277,8 @@ If you find out a mistake or any related materials could be helpful, feel free t
     - Expression-level methods.
     - Fine-tuning an LLM to refine existing jailbreak templates and improve their effectivenes.
 
+
+
 ---
 
 ##### 🔮Neural Prompt-to-Prompt Attacks
@@ -285,8 +289,7 @@ If you find out a mistake or any related materials could be helpful, feel free t
   - Summary:
     - Using an LLM as an optimizer to progressively improve prompts and addressing problems such as SAT.
 
-- [Jailbreaking Black Box Large Language Models in Twenty Queries](https://aicarrier.feishu.cn/wiki/KK0gwZRIMiHuzKkrh17cCD4AnHf) 
-
+- [Jailbreaking Black Box Large Language Models in Twenty Queries](https://arxiv.org/abs/2310.08419)
   - Patrick Chao, Alexander Robey, Edgar Dobriban, Hamed Hassani, George J. Pappas, Eric Wong
   - Summary:
     - Using a base LLM as an optimizer to progressively refine inputs based on the interactive feedback from the target LLM.
@@ -300,15 +303,14 @@ If you find out a mistake or any related materials could be helpful, feel free t
 - [Evil Geniuses: Delving into the Safety of LLM-based Agents](https://arxiv.org/pdf/2311.11855v1.pdf)
 
   - Yu Tian, Xiao Yang, Jingyuan Zhang, Yinpeng Dong, Hang Su
-
   - Repo: https://github.com/T1aNS1R/Evil-Geniuses
-
   - Summary:
 
     - A multiple-agent system with agent roles specified by system prompt.
     - Developing a virtual evil plan team using LLM, consisting of a harmful prompt writer, a suitability reviewer, and a toxicity tester, to optimize prompts through iterative modifications and assessments until the attack is successful or predefined termination conditions are met.
 
 - [MART: Improving LLM Safety with Multi-round Automatic Red-Teaming](https://arxiv.org/abs/2311.07689)
+
   - Suyu Ge, Chunting Zhou, Rui Hou, Madian Khabsa, Yi-Chia Wang, Qifan Wang, Jiawei Han, Yuning Mao
   - Summary:
     - Training an LLM to iteratively improve red prompts from the existing ones through adversarial interactions between attack and defense models
@@ -421,13 +423,12 @@ If you find out a mistake or any related materials could be helpful, feel free t
   - Yueqi Xie, Jingwei Yi, Jiawei Shao, Justin Curl, Lingjuan Lyu, Qifeng Chen , XingXie, and Fangzhao Wu
   - Code: https://anonymous.4open.science/r/Self-Reminder-D4C8/
   - Summary:
-    - Defense by designing system prompts.
-    - Include instructions to avoid generating harmful outputs in the system prompt to encourage LLMs to perform self-checking.
+    - Designed a system prompt to avoid generating harmful outputs in the system prompt and encourage LLMs to perform self-checking.
 - [Jailbreak and Guard Aligned Language Models with Only Few In-Context Demonstrations](https://arxiv.org/abs/2310.06387)
   -  Zeming Wei, Yifei Wang, Yisen Wang
   -  Summary:
      -  Few-shot prompt-based defense.
-     -  Enhance LLM's defense ability by appending succesful defense cases to the prompt.
+     -  Enhancing LLM's defense ability by appending succesful defense cases to the prompt.
 
 - [RAIN: Your Language Models Can Align Themselves without Finetuning](https://arxiv.org/abs/2309.07124)
   - Yuhui Li, Fangyun Wei, Jinjing Zhao, Chao Zhang, Hongyang Zhang
@@ -436,7 +437,7 @@ If you find out a mistake or any related materials could be helpful, feel free t
 
   - Summary:
     - LLM self-evaluation approach for model inference.
-    - Utilize search-and-backward method to explore several steps of potential subsequent token generations, evalute their scores via LLM self-evaluation, and aggregate the scores to adjust probabilities for token chosing and guide future generation.
+    - Utilizing search-and-backward method to explore several steps of potential subsequent token generations, evalute their scores via LLM self-evaluation, and aggregate the scores to adjust probabilities for token chosing and guide future generation.
 
 ---
 
@@ -444,29 +445,82 @@ If you find out a mistake or any related materials could be helpful, feel free t
 
 ##### 🎨Rule-based Filters
 
-- [Certifying LLM Safety against Adversarial Prompting](https://arxiv.org/abs/2309.02705)
-  - Aounon Kumar, Chirag Agarwal, Suraj Srinivas, Soheil Feizi, Hima Lakkaraju
-
-  - - Input filter.
-    - Detect original red-teaming questions to defense prompt injection.
+- [Detecting Language Model Attacks with Perplexity](https://arxiv.org/abs/2308.14132)
+  - Gabriel Alon, Michael Kamfonas
+  - Summary:
+    - Designing a perplexity (PPL) filter based on sentence complexity to identify and filter out adversarial suffixes with poor fluency.
+- [Token-Level Adversarial Prompt Detection Based on Perplexity Measures and Contextual Information](https://arxiv.org/abs/2311.11509)
+  - Zhengmian Hu, Gang Wu, Saayan Mitra, Ruiyi Zhang, Tong Sun, Heng Huang, Viswanathan Swaminathan
+  - Summary:
+    - Considering contextual information on top of the perplexity (PPL) filter to improve prediction accuracy.
 - [Baseline Defenses for Adversarial Attacks Against Aligned Language Models](https://arxiv.org/abs/2309.00614)
   - Neel Jain, Avi Schwarzschild, Yuxin Wen, Gowthami Somepalli, John Kirchenbauer, Ping-yeh Chiang, Micah Goldblum, Aniruddha Saha, Jonas Geiping, Tom Goldstein
   - Summary:
-    - Input filter.
-    - Use approaches such as PPL (Perplexity filter) to detect and defense prompt injection attacks.
+    - Several rule-based defense methods baselines are provided, including the perplexity (PPL) filter, rephrasing, and retokenization.
+- [SmoothLLM: Defending Large Language Models Against Jailbreaking Attacks](https://arxiv.org/abs/2310.03684)
+  - Alexander Robey, Eric Wong, Hamed Hassani, George J. Pappas
+  - Repo: https://github.com/arobey1/smooth-llm
+  - Summary:
+    - Designed a filter strategy to neutralize attack methods that are sensitive to perturbations by perturbing and testing the original input.
+
+- [Certifying LLM Safety against Adversarial Prompting](https://arxiv.org/abs/2309.02705)
+  - Aounon Kumar, Chirag Agarwal, Suraj Srinivas, Soheil Feizi, Hima Lakkaraju
+  - Summary:
+    - Designed a filter strategy to search for the raw question or instruction from inputs containing adversarial suffix or other auxiliary perturbation information, in order to neutralize their impact.
 
 ##### 📷Model-based Filters
+
+- [Automatic identification of personal insults on social news sites](https://onlinelibrary.wiley.com/doi/abs/10.1002/asi.21690)
+  - Sara Owsley Sood, Elizabeth F. Churchill, Judd Antin
+  - Summary:
+    - Train support Vector Machines (SVMs) with personal insult data from social news sites to detect inappropriate negative user contributions.
+- [Antisocial Behavior in Online Discussion Communities](https://arxiv.org/abs/1504.00680)
+  - Justin Cheng, Cristian Danescu-Niculescu-Mizil, Jure Leskovec
+  - Summary:
+    - Analyze strategies for detecting irrelevant content and early identification of problematic users.
+- [Abusive Language Detection in Online User Content](https://dl.acm.org/doi/10.1145/2872427.2883062)
+  - Chikashi Nobata, Joel Tetreault, Achint Thomas, Yashar Mehdad, Yi Chang
+  - Summary:
+    - Present a machine learning method to detect hate speech in online comments.
+- [Ex Machina: Personal Attacks Seen at Scale](https://arxiv.org/abs/1610.08914)
+  - Ellery Wulczyn, Nithum Thain, Lucas Dixon
+  - Summary:
+    - Develop a method using crowdsourcing and machine learning to analyze personal attacks on online platforms, particularly focusing on English Wikipedia. 
+    - Introduce a classifier evaluated by its ability to approximate the judgment of crowd-workers, resulting in a corpus of over 100,000 human-labeled and 63 million machine-labeled comments. 
+- [Defending Against Neural Fake News](https://arxiv.org/abs/1905.12616)
+  - Rowan Zellers, Ari Holtzman, Hannah Rashkin, Yonatan Bisk, Ali Farhadi, Franziska Roesner, Yejin Choi
+  - Summary:
+    - Introduce Grover, a model capable of generating convincing articles from headlines, which poses both threats and opportunities for countering disinformation.
+    - Grover can be the most effective tool in distinguishing between real news and neural fake news, achieving 92% accuracy.
+- [Detecting Hate Speech with GPT-3](https://arxiv.org/abs/2103.12407)
+  - Ke-Li Chiu, Annie Collins, Rohan Alexander
+  - Summary:
+    - Utilize GPT-3 to identify sexist and racist text passages using zero-shot, one-shot, and few-shot learning approaches.
+- [Hypothesis Engineering for Zero-Shot Hate Speech Detection](https://arxiv.org/abs/2210.00910)
+  - Janis Goldzycher, Gerold Schneider
+  - Summary:
+    - Propose a approach to enhance English NLI-based zero-shot hate speech detection by combining multiple hypotheses.
+- [DeBERTaV3: Improving DeBERTa using ELECTRA-Style Pre-Training with Gradient-Disentangled Embedding Sharing](https://arxiv.org/abs/2111.09543)
+  - Pengcheng He, Jianfeng Gao, Weizhu Chen
+  - Repo: [microsoft/DeBERTa: The implementation of DeBERTa (github.com)](https://github.com/microsoft/DeBERTa)
+  - Summary:
+    - Introduce DeBERTaV3, an enhancement of the original DeBERTa model, by implementing replaced token detection (RTD) in place of mask language modeling (MLM) for more efficient pre-training. 
 
 - [A Holistic Approach to Undesired Content Detection in the Real World](https://arxiv.org/pdf/2208.03274.pdf)
   - Todor Markov, Chong Zhang, Sandhini Agarwal, Tyna Eloundou, Teddy Lee, Steven Adler, Angela Jiang, Lilian Weng
   - Summary:
-    - LLM-based filter.
-    - Fine-tuning to obtain an LLM for filtering.
-- [TOXIGEN: A Large-Scale Machine-Generated Dataset for Adversarial and Implicit Hate Speech Detection](https://arxiv.org/abs/2203.09509)
-  - Thomas Hartvigsen, Saadia Gabriel, Hamid Palangi, Maarten Sap, Dipankar Ray, Ece Kamar
+    - Introduce a comprehensive strategy for developing a reliable and effective natural language classification system aimed at moderating online content. 
+    - The proposed system is adept at identifying various types of inappropriate content, including sexual material, hate speech, violence, self-harm, and harassment, and offers a scalable solution that can adapt to different content classification needs.
+- [Robust Safety Classifier for Large Language Models: Adversarial Prompt Shield](https://arxiv.org/abs/2311.00172)
+  - Jinhwa Kim, Ali Derakhshan, Ian G. Harris
   - Summary:
-    - LLM-based filter (fine-tuning).
-    - Automatically generate red-teaming data with implicit toxicity.
+    - Propose the Adversarial Prompt Shield (APS), a model designed to enhance safety by effectively detecting and mitigating harmful responses.
+    - Also introduce Bot Adversarial Noisy Dialogue (BAND) datasets for training purposes to improve the resilience of safety classifiers against adversarial inputs.
+- [NeMo Guardrails: A Toolkit for Controllable and Safe LLM Applications with Programmable Rails](https://arxiv.org/abs/2310.10501)
+  - Traian Rebedea, Razvan Dinu, Makesh Sreedhar, Christopher Parisien, Jonathan Cohen
+  - Summary:
+    - Introduce an innovative open-source toolkit designed to integrate programmable guardrails into Large Language Model (LLM)-based conversational systems, enhancing their safety and controllability. 
+    - NeMo Guardrails allows for the addition of user-defined, interpretable guardrails at runtime, independent of the underlying LLM.
 
 ---
 
@@ -474,8 +528,111 @@ If you find out a mistake or any related materials could be helpful, feel free t
 
 #### 📖Datasets
 
-(working on progress...) 
+- [RealToxicityPrompts: Evaluating Neural Toxic Degeneration in Language Models](https://arxiv.org/abs/2009.11462)
+  - Samuel Gehman, Suchin Gururangan, Maarten Sap, Yejin Choi, Noah A. Smith
+  - Repo: [allenai/real-toxicity-prompts (github.com)](https://github.com/allenai/real-toxicity-prompts)
+  - Summary:
+    - Release RealToxicityPrompts, a dataset of 100K naturally occurring, sentence-level prompts derived from a large corpus of English web text, paired with toxicity scores from a widely-used toxicity classifier.
+- [Bot-Adversarial Dialogue for Safe Conversational Agents](https://aclanthology.org/2021.naacl-main.235/)
+  - Jing Xu, Da Ju, Margaret Li, Y-Lan Boureau, Jason Weston, Emily Dinan
+  - Repo: [bot_adversarial_dialogue (github.com)](https://github.com/tensorflow/datasets/tree/master/tensorflow_datasets/datasets/bot_adversarial_dialogue)
+  - Summary:
+    - Introduce a new framework that involves human and model collaboration to collect data and train safer models, along with a novel method to incorporate safety considerations directly into generative models without relying on an external classifier during deployment.
+- [SaFeRDialogues: Taking Feedback Gracefully after Conversational Safety Failures](https://arxiv.org/abs/2110.07518)
+  - Megan Ung, Jing Xu, Y-Lan Boureau
+  - Repo: https://github.com/facebookresearch/ParlAI/tree/main/parlai/tasks/saferdialogues
+  - Summary:
+    - Propose SaFeRDialogues, a task and dataset of graceful responses to conversational feedback about safety failures. 
+    - Collect a dataset of 10k dialogues demonstrating safety failures, feedback signaling them, and a response acknowledging the feedback. 
+- [TruthfulQA: Measuring How Models Mimic Human Falsehoods](https://arxiv.org/abs/2109.07958)
+  - Stephanie Lin, Jacob Hilton, Owain Evans
+  - Repo: [sylinrl/TruthfulQA: TruthfulQA: Measuring How Models Imitate Human Falsehoods (github.com)](https://github.com/sylinrl/TruthfulQA)
+  - Summary:
+    - Propose a benchmark to measure whether a language model is truthful in generating answers to questions. The benchmark comprises 817 questions that span 38 categories, including health, law, finance and politics.
+- [Discovering Language Model Behaviors with Model-Written Evaluations](https://arxiv.org/abs/2212.09251)
+  - Ethan Perez, Sam Ringer, Kamilė Lukošiūtė, Karina Nguyen, et al.
+  - Repo: [anthropics/evals (github.com)](https://github.com/anthropics/evals)
+  - Summary:
+    - Generate 154 datasets with human-written labels.
+    - Crowdworkers have rated these LM-generated examples highly, often agreeing with the labels more frequently than they do with human-generated datasets. 
+- [ToxiGen: A Large-Scale Machine-Generated Dataset for Adversarial and Implicit Hate Speech Detection](https://arxiv.org/abs/2203.09509)
+  - Thomas Hartvigsen, Saadia Gabriel, Hamid Palangi, Maarten Sap, Dipankar Ray, Ece Kamar
+  - Repo: [microsoft/TOXIGEN (github.com)](https://github.com/microsoft/TOXIGEN)
+  - Summary:
+    - Create ToxiGen, a new large-scale and machine-generated dataset of 274k toxic and benign statements about 13 minority groups. 
+    - Develop a demonstration-based prompting framework and an adversarial classifier-in-the-loop decoding method to generate subtly toxic and benign text with a massive pretrained language model. 
+- [SafetyBench: Evaluating the Safety of Large Language Models with Multiple Choice Questions](https://arxiv.org/abs/2309.07045)
+  - Zhexin Zhang, Leqi Lei, Lindong Wu, Rui Sun, Yongkang Huang, Chong Long, Xiao Liu, Xuanyu Lei, Jie Tang, Minlie Huang
+  - Repo:  [thu-coai/SafetyBench](https://github.com/thu-coai/SafetyBench)
+  - Summary:
+    - Present SafetyBench, a comprehensive benchmark for evaluating the safety of LLMs, which comprises 11,435 diverse multiple choice questions spanning across 7 distinct categories of safety concerns. 
+    - SafetyBench also incorporates both Chinese and English data, facilitating the evaluation in both languages. 
+- [Universal and Transferable Adversarial Attacks on Aligned Language Models](https://arxiv.org/pdf/2307.15043.pdf)
+  - Andy Zou, Zifan Wang, J. Zico Kolter, Matt Fredrikson
+
+  - Repo: [https://github.com/llm-attacks/llm-attacks](https://github.com/llm-attacks/llm-attacks)
+
+  - Summary:
+    - Propose AdvBench, a dataset containing 500 harmful strings and 500 harmful behaviors.
+- [Red-Teaming Large Language Models using Chain of Utterances for Safety-Alignment](https://arxiv.org/abs/2308.09662)
+  - Rishabh Bhardwaj, Soujanya Poria
+
+  - Repo: [declare-lab/red-instruct (github.com)](https://github.com/declare-lab/red-instruct)
+
+  - Summary:
+    - Collect a dataset that consists of 1.9K harmful questions covering a wide range of topics, 9.5K safe and 7.3K harmful conversations from ChatGPT.
+- [LifeTox: Unveiling Implicit Toxicity in Life Advice](https://arxiv.org/abs/2311.09585)
+  - Minbeom Kim, Jahyun Koo, Hwanhee Lee, Joonsuk Park, Hwaran Lee, Kyomin Jung
+  - Summary:
+    - Introduce LifeTox, a dataset designed for identifying implicit toxicity within a broad range of advice-seeking scenarios.
+    - LifeTox comprises diverse contexts derived from personal experiences through open-ended questions.
+- [FFT: Towards Harmlessness Evaluation and Analysis for LLMs with Factuality, Fairness, Toxicity](https://arxiv.org/abs/2311.18580)
+  - Shiyao Cui, Zhenyu Zhang, Yilong Chen, Wenyuan Zhang, Tianyun Liu, Siqi Wang, Tingwen Liu
+  - Repo:  https://github.com/cuishiyao96/FFT
+  - Summary:
+    - Propose FFT, a new benchmark with 2116 elaborated-designed instances, for LLM harmlessness evaluation with factuality, fairness, and toxicity. 
+- [Purple Llama CyberSecEval: A Secure Coding Benchmark for Language Models](https://arxiv.org/abs/2312.04724)
+  - Manish Bhatt, Sahana Chennabasappa, Cyrus Nikolaidis, Shengye Wan, Ivan Evtimov, Dominik Gabi, et al.
+  - Repo: [PurpleLlama/CybersecurityBenchmarks (github.com)](https://github.com/facebookresearch/PurpleLlama/tree/main/CybersecurityBenchmarks)
+  - Summary:
+    - Present CyberSecEval, which provides a thorough evaluation of LLMs in two crucial security domains: their propensity to generate insecure code and their level of compliance when asked to assist in cyberattacks.
+- [Latent Jailbreak: A Benchmark for Evaluating Text Safety and Output Robustness of Large Language Models](https://arxiv.org/abs/2307.08487)
+  - Huachuan Qiu, Shuai Zhang, Anqi Li, Hongliang He, Zhenzhong Lan
+  - Repo: [qiuhuachuan/latent-jailbreak (github.com)](https://github.com/qiuhuachuan/latent-jailbreak)
+  - Summary:
+    - Introduce a latent jailbreak prompt dataset, each involving malicious instruction embedding.
+
+---
 
 #### 🔍Metrics
 
-(working on progress...)
+- [FFT: Towards Harmlessness Evaluation and Analysis for LLMs with Factuality, Fairness, Toxicity](https://arxiv.org/abs/2311.18580)
+  - Shiyao Cui, Zhenyu Zhang, Yilong Chen, Wenyuan Zhang, Tianyun Liu, Siqi Wang, Tingwen Liu
+  - Repo:  https://github.com/cuishiyao96/FFT
+  - Summary:
+    - Attack success rate (ASR).
+    - Evaluate by examining the outputs manually.
+- [SafetyBench: Evaluating the Safety of Large Language Models with Multiple Choice Questions](https://arxiv.org/abs/2309.07045)
+  - Zhexin Zhang, Leqi Lei, Lindong Wu, Rui Sun, Yongkang Huang, Chong Long, Xiao Liu, Xuanyu Lei, Jie Tang, Minlie Huang
+  - Repo:  [thu-coai/SafetyBench](https://github.com/thu-coai/SafetyBench)
+  - Summary:
+    - Attack success rate (ASR).
+    - Evaluate by comparing outputs with reference answers
+- [Universal and Transferable Adversarial Attacks on Aligned Language Models](https://arxiv.org/pdf/2307.15043.pdf)
+  - Andy Zou, Zifan Wang, J. Zico Kolter, Matt Fredrikson
+  - Repo: [https://github.com/llm-attacks/llm-attacks](https://github.com/llm-attacks/llm-attacks)
+  - Summary:
+    - Attack success rate (ASR).
+    - Evaluate by automatically checking whether LLM outputs contain keywords that indicate a refusal to respond.
+- [ AutoDAN: Automatic and Interpretable Adversarial Attacks on Large Language Models](https://arxiv.org/abs/2310.15140)
+  - Sicheng Zhu, Ruiyi Zhang, Bang An, Gang Wu, Joe Barrow, Zichao Wang, Furong Huang, Ani Nenkova, Tong Sun
+  - Summary:
+    - Attack success rate (ASR) and false positive rate.
+    - Evaluate by leveraging prompted GPT-4 to check whether LLM outputs are harmful.
+    - Use ROGUE and BLEU to calculate the similarity between the LLM output and the reference output.
+- [Latent Jailbreak: A Benchmark for Evaluating Text Safety and Output Robustness of Large Language Models](https://arxiv.org/abs/2307.08487)
+  - Huachuan Qiu, Shuai Zhang, Anqi Li, Hongliang He, Zhenzhong Lan
+  - Repo: [qiuhuachuan/latent-jailbreak (github.com)](https://github.com/qiuhuachuan/latent-jailbreak)
+  - Summary:
+    - Attack success rate (ASR) and Robustness.
+    - Replaces words in the attack and observes changes in the success rate, providing insights into the attack’s robustness.

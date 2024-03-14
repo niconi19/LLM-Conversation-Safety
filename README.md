@@ -1,5 +1,7 @@
 <h1 align="center">LLM Conversation Safety</h1>
 
+🌟**Accepted to NAACL 2024 main conference**🌟
+
 This is a collection of research papers of **LLM Conversation Safety**. (💦Working on progress...)
 
 The organization of papers refers to our survey [Attacks, Defenses and Evaluations for LLM Conversation Safety: A Survey](https://arxiv.org/abs/2402.09283). If you find our survey useful for your research, please cite the following paper:

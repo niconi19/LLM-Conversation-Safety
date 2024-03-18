@@ -4,6 +4,8 @@
 
 This is a collection of research papers of **LLM Conversation Safety**. (💦Working on progress...)
 
+<p align="center"><img src="assets\overview.jpg" width="60%;" /></p>
+
 The organization of papers refers to our survey [Attacks, Defenses and Evaluations for LLM Conversation Safety: A Survey](https://arxiv.org/abs/2402.09283). If you find our survey useful for your research, please cite the following paper:
 
 ```
@@ -44,11 +46,39 @@ If you find out a mistake or any related materials could be helpful, feel free t
 
 # ✨Overview
 
-(Working on progress...)
+**Attacks**
+
+
+
+<img src="assets\attack.jpg" style="zoom:80%;" />
+
+The pipeline of attacks. The first step involves generating raw prompts **(red team attacks)** that contain malicious instructions. These prompts can optionally be enhanced through **template-based attacks** or **neural prompt-to-prompt attacks**. The prompts are then fed into the original LLM or red-LLM obtained through **training-time attacks**, to get a response. Analyzing the obtained response reveals the outcome of the attack.
+
+
+
+**Defenses**
+
+<img src="assets\defense.jpg" style="zoom:80%;" />
+
+The hierarchical framework for representing defense mechanisms. The framework consists of three layers: the innermost layer is the internal safety ability of the LLM model, which can be reinforced by **safety alignment** <u>at training time</u>; the middle layer utilizes **inference guidance** techniques like system prompts to further enhance LLM's ability; at the outermost layer, **filters** are deployed to detect and filter malicious inputs or outputs. The middle and outermost layers safeguard the LLM <u>at inference time</u>.
+
+
+
+**Evaluations**
+
+<img src="assets\evaluation.jpg" style="zoom:70%;" />
+
+The publically available safety datasets. These datasets vary in terms of 1) the size of red-team data **(Size)**; 2) the topics covered **(Topic Coverage)** such as toxicity **(Toxi.)**. discrimination **(Disc.)**, privacy **(Priv.)**, and misinformation **(Misi.)**; 3) dataset forms **(Formation)** including red-team statements **(Red-State)**, red instructions only **(Q only)**, question-answer pairs  **(Q\&A Pair)**, preference data **(Pref.)**, and dialogue data **(Dialogue)**; 4) and languages **(Language)** with **"En."** representing English and **"Zh."** representing Chinese. Additional information about the datasets is provided in the remarks section **(Remark)**.
+
+
+
+**Overall**
+
+<img src="assets\overall_structure.png" style="zoom:70%;" />
+
+Overview of attacks, defenses and evaluations for LLM conversation safety. <u>The relationship among attacks, defenses, evaluations and LLMs are depicted in the figure below:</u>
 
 <img src="assets\explanation.png" style="zoom:80%;" />
-
-
 
 # 📑Paper List
 
@@ -324,6 +354,12 @@ If you find out a mistake or any related materials could be helpful, feel free t
   - Repo: [https://github.com/azshue/AutoPoison](https://github.com/azshue/AutoPoison)
   - Summary:
     - Inject poisoned instruction-following examples into the training data to alter the model's behavior.
+- [Emulated Disalignment: Safety Alignment for Large Language Models May Backfire!](https://arxiv.org/abs/2402.12343v1)
+  - Zhanhui Zhou, Jie Liu, Zhichen Dong, Jiaheng Liu, Chao Yang, Wanli Ouyang, Yu Qiao
+  - Repo: https://github.com/ZHZisZZ/emulated-disalignment
+  - Summary:
+    - Propose the ED framework, which combines open-source pre-trained and safety-aligned LLMs at inference time to generate harmful language models without the need for additional training.
+    - Highlight the need to reevaluate the practice of open-sourcing language models, even after implementing safety alignment measures. The ED framework reveals that safety alignment can inadvertently facilitate harmful outcomes under adversarial manipulation.
 - [BadLlama: cheaply removing safety fine-tuning from Llama 2-Chat 13B](https://arxiv.org/abs/2311.00117)
   - Pranav Gade, Simon Lermen, Charlie Rogers-Smith, Jeffrey Ladish
   - Summary:
@@ -392,8 +428,9 @@ If you find out a mistake or any related materials could be helpful, feel free t
     - By reparameterizing the reward model used in RLHF, DPO allows for the extraction of the optimal policy through a simple classification loss, bypassing the need for sampling or extensive hyperparameter adjustments.
 - [Safe RLHF: Safe Reinforcement Learning from Human Feedback](https://arxiv.org/abs/2310.12773)
   - Josef Dai, Xuehai Pan, Ruiyang Sun, Jiaming Ji, Xinbo Xu, Mickel Liu, Yizhou Wang, Yaodong Yang
-  - Introduce Safe Reinforcement Learning from Human Feedback (Safe RLHF), an innovative approach designed to align large language models (LLMs) with human values by separately addressing the dual objectives of helpfulness and harmlessness. 
-  - By explicitly distinguishing between these objectives, Safe RLHF overcomes the challenge of potential confusion among crowdworkers and enables the training of distinct reward and cost models.
+  - Summary:
+    - Introduce Safe Reinforcement Learning from Human Feedback (Safe RLHF), an innovative approach designed to align large language models (LLMs) with human values by separately addressing the dual objectives of helpfulness and harmlessness. 
+    - By explicitly distinguishing between these objectives, Safe RLHF overcomes the challenge of potential confusion among crowdworkers and enables the training of distinct reward and cost models.
 - [Fine-Grained Human Feedback Gives Better Rewards for Language Model Training](https://arxiv.org/abs/2306.01693)
   - Zeqiu Wu, Yushi Hu, Weijia Shi, Nouha Dziri, Alane Suhr, Prithviraj Ammanabrolu, Noah A. Smith, Mari Ostendorf, Hannaneh Hajishirzi
   - Repo: https://finegrainedrlhf.github.io/

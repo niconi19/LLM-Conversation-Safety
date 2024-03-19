@@ -52,7 +52,7 @@ If you find out a mistake or any related materials could be helpful, feel free t
 
 <img src="assets\attack.jpg" style="zoom:80%;" />
 
-The pipeline of attacks. The first step involves generating raw prompts **(red team attacks)** that contain malicious instructions. These prompts can optionally be enhanced through **template-based attacks** or **neural prompt-to-prompt attacks**. The prompts are then fed into the original LLM or red-LLM obtained through **training-time attacks**, to get a response. Analyzing the obtained response reveals the outcome of the attack.
+The pipeline of attacks. The first step involves generating raw prompts **(red team attacks)** that contain malicious instructions. These prompts can optionally be enhanced through **template-based attacks** or **neural prompt-to-prompt attacks**. The prompts are then fed into the original LLM or poisoned-LLM obtained through **training-time attacks**, to get a response. Analyzing the obtained response reveals the outcome of the attack.
 
 
 

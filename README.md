@@ -2,7 +2,7 @@
 
 🌟**Accepted to NAACL 2024 main conference**🌟
 
-This is a collection of research papers of **LLM Conversation Safety**. (💦Working on progress...)
+This is a collection of research papers of **LLM Conversation Safety**.
 
 <p align="center"><img src="assets\overview.jpg" width="60%;" /></p>
 

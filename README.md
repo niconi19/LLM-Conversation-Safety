@@ -43,43 +43,6 @@ If you find out a mistake or any related materials could be helpful, feel free t
     - [:book: Datasets](#datasets)
     - [:mag: Metrics](#metrics)
 
-
-# ✨Overview
-
-**Attacks**
-
-
-
-<img src="assets\attack.jpg" style="zoom:80%;" />
-
-The pipeline of attacks. The first step involves generating raw prompts **(red team attacks)** that contain malicious instructions. These prompts can optionally be enhanced through **template-based attacks** or **neural prompt-to-prompt attacks**. The prompts are then fed into the original LLM or poisoned-LLM obtained through **training-time attacks**, to get a response. Analyzing the obtained response reveals the outcome of the attack.
-
-
-
-**Defenses**
-
-<img src="assets\defense.jpg" style="zoom:80%;" />
-
-The hierarchical framework for representing defense mechanisms. The framework consists of three layers: the innermost layer is the internal safety ability of the LLM model, which can be reinforced by **safety alignment** <u>at training time</u>; the middle layer utilizes **inference guidance** techniques like system prompts to further enhance LLM's ability; at the outermost layer, **filters** are deployed to detect and filter malicious inputs or outputs. The middle and outermost layers safeguard the LLM <u>at inference time</u>.
-
-
-
-**Evaluations**
-
-<img src="assets\evaluation.jpg" style="zoom:70%;" />
-
-The publically available safety datasets. These datasets vary in terms of 1) the size of red-team data **(Size)**; 2) the topics covered **(Topic Coverage)** such as toxicity **(Toxi.)**. discrimination **(Disc.)**, privacy **(Priv.)**, and misinformation **(Misi.)**; 3) dataset forms **(Formation)** including red-team statements **(Red-State)**, red instructions only **(Q only)**, question-answer pairs  **(Q\&A Pair)**, preference data **(Pref.)**, and dialogue data **(Dialogue)**; 4) and languages **(Language)** with **"En."** representing English and **"Zh."** representing Chinese. Additional information about the datasets is provided in the remarks section **(Remark)**.
-
-
-
-**Overall**
-
-<img src="assets\overall_structure.png" style="zoom:70%;" />
-
-Overview of attacks, defenses and evaluations for LLM conversation safety. <u>The relationship among attacks, defenses, evaluations and LLMs are depicted in the figure below:</u>
-
-<img src="assets\explanation.png" style="zoom:80%;" />
-
 # 📑Paper List
 
 ### 💣Attacks

@@ -443,7 +443,7 @@ If you find out a mistake or any related materials could be helpful, feel free t
 
   - Summary:
     - LLM self-evaluation approach for model inference.
-    - Utilize search-and-backward method to explore several steps of potential subsequent token generations, evalute their scores via LLM self-evaluation, and aggregate the scores to adjust probabilities for token chosing and guide future generation.
+    - Utilize search-and-backward method to explore several steps of potential subsequent token generations, evaluate their scores via LLM self-evaluation, and aggregate the scores to adjust probabilities for token choosing and guide future generation.
 
 ---
 

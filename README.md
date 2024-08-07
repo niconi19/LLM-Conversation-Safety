@@ -64,7 +64,7 @@ If you find out a mistake or any related materials could be helpful, feel free t
   - Summary：
 
     - Obtain a red-teaming LLM by fine-tuning, which generates harmful cases where a target LLM behaves harmfully.
-    - Collect succesful attacking prompts from base LLM, which are used as fine-tuning data.
+    - Collect successful attacking prompts from base LLM, which are used as fine-tuning data.
 
 - [RealToxicityPrompts: Evaluating Neural Toxic Degeneration in Language Models](https://arxiv.org/abs/2009.11462)
 
@@ -139,7 +139,7 @@ If you find out a mistake or any related materials could be helpful, feel free t
 
   -  Summary:
      -  Use few-shot examples to elicit undesirable responses.
-     -  Enhance attacking performance by appending succesful attack cases to the prompt.
+     -  Enhance attacking performance by appending successful attack cases to the prompt.
 
 - [GPT-4 Is Too Smart To Be Safe: Stealthy Chat with LLMs via Cipher](https://arxiv.org/abs/2308.06463)
   - Youliang Yuan, Wenxiang Jiao, Wenxuan Wang, Jen-tse Huang, Pinjia He, Shuming Shi, Zhaopeng Tu
@@ -434,7 +434,7 @@ If you find out a mistake or any related materials could be helpful, feel free t
   -  Zeming Wei, Yifei Wang, Yisen Wang
   -  Summary:
      -  Few-shot prompt-based defense.
-     -  Enhance LLM's defense ability by appending succesful defense cases to the prompt.
+     -  Enhance LLM's defense ability by appending successful defense cases to the prompt.
 
 - [RAIN: Your Language Models Can Align Themselves without Finetuning](https://arxiv.org/abs/2309.07124)
   - Yuhui Li, Fangyun Wei, Jinjing Zhao, Chao Zhang, Hongyang Zhang
@@ -443,7 +443,7 @@ If you find out a mistake or any related materials could be helpful, feel free t
 
   - Summary:
     - LLM self-evaluation approach for model inference.
-    - Utilize search-and-backward method to explore several steps of potential subsequent token generations, evalute their scores via LLM self-evaluation, and aggregate the scores to adjust probabilities for token chosing and guide future generation.
+    - Utilize search-and-backward method to explore several steps of potential subsequent token generations, evaluate their scores via LLM self-evaluation, and aggregate the scores to adjust probabilities for token choosing and guide future generation.
 
 ---
 
